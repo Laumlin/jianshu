@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
-
+import { HeaderWraper } from './style'
 class Header extends Component {
   render() {
     return (
-      <div>简书</div>
+      <HeaderWraper>
+        简书
+      </HeaderWraper>
     )
   }
 }
