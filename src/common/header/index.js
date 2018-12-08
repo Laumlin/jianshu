@@ -49,7 +49,7 @@ const Header = (props) => {
 
 const mapStateToProps = (state) => {
   return {
-    focused: state.focused
+    focused: state.header.focused
   }
 }
 
@@ -57,14 +57,14 @@ const mapDispatchToProps = (dispatch) => {
   return {
     handleInputFocus() {
       const action = {
-        type: 'handleInputFocus'
+        type: 'search_focus'
       }
       dispatch(action)
     },
 
     handleInputBlur() {
       const action = {
-        type: 'handleInputBlur',
+        type: 'search_blur',
       }
       dispatch(action)
     }
