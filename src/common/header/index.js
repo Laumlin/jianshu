@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { CSSTransition } from 'react-transition-group'
 import { 
   HeaderWrapper,
   Logo,
@@ -28,11 +29,16 @@ class Header extends Component {
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载App</NavItem>
           <SearchWrapper>
-            <NavSearch 
-              className={this.state.focused ? 'focused' : ''}
-              onFocus={this.bandleInputFocus}
-              onBlur={this.handleInputBlur}
-            ></NavSearch>
+            <CSSTransition
+              timeout={200}
+              in={this.state.focused}
+              classNames="slide">
+              <NavSearch 
+                className={this.state.focused ? 'focused' : ''}
+                onFocus={this.bandleInputFocus}
+                onBlur={this.handleInputBlur}
+              ></NavSearch>
+            </CSSTransition>
             <i className={this.state.focused ? 'focused iconfont' : 'iconfont'}>&#xe60d;</i>
           </SearchWrapper>
           <NavItem className="right">登录</NavItem>
