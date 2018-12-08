@@ -11,6 +11,15 @@ import {
 } from './style'
 
 class Header extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      focused: false
+    }
+    this.bandleInputFocus = this.handleInputFocus.bind(this)
+    this.handleInputBlur = this.handleInputBlur.bind(this)
+  }
+
   render() {
     return (
       <HeaderWrapper>
@@ -19,8 +28,12 @@ class Header extends Component {
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载App</NavItem>
           <SearchWrapper>
-            <NavSearch></NavSearch>
-            <i className="iconfont">&#xe60d;</i>
+            <NavSearch 
+              className={this.state.focused ? 'focused' : ''}
+              onFocus={this.bandleInputFocus}
+              onBlur={this.handleInputBlur}
+            ></NavSearch>
+            <i className={this.state.focused ? 'focused iconfont' : 'iconfont'}>&#xe60d;</i>
           </SearchWrapper>
           <NavItem className="right">登录</NavItem>
           <NavItem className="right">
@@ -35,6 +48,14 @@ class Header extends Component {
         </Addition>
       </HeaderWrapper>
     )
+  }
+
+  handleInputFocus() {
+    this.setState(() => ({focused: true}))
+  }
+
+  handleInputBlur() {
+    this.setState(() => ({focused: false}))
   }
 }
 
