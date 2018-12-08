@@ -48,6 +48,20 @@ export const NavItem = styled.div`
 
 `
 
+export const SearchWrapper = styled.div`
+  float: left;
+  position: relative;
+  .iconfont {
+    position: absolute;
+    right: 5px;
+    margin-top: 14px;
+    line-height: 30px;
+    width: 30px;
+    border-radius: 19px;
+    text-align: center;
+  }
+`
+
 export const NavSearch = styled.input.attrs({
   placeholder: '搜索'
 })`
