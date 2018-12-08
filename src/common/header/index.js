@@ -3,7 +3,8 @@ import {
   HeaderWrapper,
   Logo,
   Nav,
-  NavItem
+  NavItem,
+  NavSearch
 } from './style'
 
 class Header extends Component {
@@ -14,6 +15,7 @@ class Header extends Component {
         <Nav>
           <NavItem className="left active">首页</NavItem>
           <NavItem className="left">下载App</NavItem>
+          <NavSearch></NavSearch>
           <NavItem className="right">Aa</NavItem>
           <NavItem className="right">登录</NavItem>
         </Nav>

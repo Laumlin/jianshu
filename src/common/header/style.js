@@ -45,3 +45,21 @@ export const NavItem = styled.div`
   }
 
 `
+
+export const NavSearch = styled.input.attrs({
+  placeholder: '搜索'
+})`
+  margin-top: 10px;
+  margin-left: 20px;
+  padding: 0 20px;
+  width: 160px;
+  height: 38px;
+  font-size: 14px;
+  outline: none;
+  border: none;
+  border-radius: 19px;
+  background: #eee;
+  &::placeholder {
+    color: #999;
+  }
+`
