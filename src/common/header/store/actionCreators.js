@@ -1,7 +1,9 @@
+import * as constanins from './constants'
+
 export const searchFocus = () => ({
-  type: 'search_focus'
+  type: constanins.SEARCH_FOCUS
 })
 
 export const searchBlur = () => ({
-  type: 'search_blur'
+  type: constanins.SEARCH_BLUR
 })
