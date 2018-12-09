@@ -4,7 +4,8 @@ import axios from 'axios'
 
 const initList = (data) => ({
   type: constanins.INIT_LIST,
-  data: fromJS(data)// axios请求到的list需要转为immutable对象q
+  data: fromJS(data),// axios请求到的list需要转为immutable对象q
+  totalPage: Math.ceil(data.length / 10)
 })
 
 export const searchFocus = () => ({
