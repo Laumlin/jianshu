@@ -37,7 +37,11 @@ class Header extends Component {
           onMouseLeave={handleMouseLeave}>
           <SearchInfoTitle>
             热门搜索
-            <SearchInfoSwitch onClick={() => handleChangePage(page, totalPage)}>换一批</SearchInfoSwitch>
+            <SearchInfoSwitch 
+              onClick={() => handleChangePage(page, totalPage, this.spinIcon)}>
+              <i ref={(icon) => {this.spinIcon = icon}} className="iconfont spin">&#xe851;</i>
+                换一批
+            </SearchInfoSwitch>
           </SearchInfoTitle>
           <SearchInfoList>
             {pageList}
@@ -67,7 +71,7 @@ class Header extends Component {
                 onBlur={handleInputBlur}
               ></NavSearch>
             </CSSTransition>
-            <i className={focused ? 'focused iconfont' : 'iconfont'}>&#xe60d;</i>
+            <i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>&#xe60d;</i>
             {this.getListArea()}
           </SearchWrapper>
           <NavItem className="right">登录</NavItem>
@@ -116,7 +120,15 @@ const mapDispatchToProps = (dispatch) => {
       dispatch(actionCreators.mouseLeave())
     },
 
-    handleChangePage(page, totalPage) {
+    handleChangePage(page, totalPage, spinIcon) {
+      const originAngle = spinIcon.style.transform.replace(/[^0-9]/g, '')
+      if (originAngle) {
+        const angle = Number(originAngle)+360
+        spinIcon.style.transform = 'rotate('+ angle +'deg)'
+      } else {
+        spinIcon.style.transform = 'rotate(360deg)'
+      }
+
       if (page < totalPage) {
         dispatch(actionCreators.changePage(page+1))
       } else {
