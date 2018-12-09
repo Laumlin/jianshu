@@ -36,3 +36,8 @@ export const getList = () => {
       })
   }
 }
+
+export const changePage = (page) => ({
+  type: constanins.CHANGE_PAGE,
+  page
+})

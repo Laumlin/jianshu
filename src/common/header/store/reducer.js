@@ -22,7 +22,9 @@ export default (state = defaultState, action) => {
       return state.set('focused', false)
     case constains.INIT_LIST:
       return state.set('list', action.data).set('totalPage', action.totalPage)// state中list为immutable对象，所以action.data也需要修改为immutable对象
-    default:
+    case constains.CHANGE_PAGE:
+      return state.set('page', action.page)
+      default:
       return state
   }
 }
