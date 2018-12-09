@@ -21,10 +21,14 @@ export default (state = defaultState, action) => {
     case constains.SEARCH_BLUR:
       return state.set('focused', false)
     case constains.INIT_LIST:
-      return state.set('list', action.data).set('totalPage', action.totalPage)// state中list为immutable对象，所以action.data也需要修改为immutable对象
+    // state中list为immutable对象，所以action.data也需要修改为immutable对象
+      return state.merge({ // 多次使用set可换成merge方法
+        'list': action.data,
+        'totalPage': action.totalPage,
+      })
     case constains.CHANGE_PAGE:
       return state.set('page', action.page)
-      default:
+    default:
       return state
   }
 }
