@@ -1,3 +1,3 @@
-export const SEARCH_FOCUS = 'search_focus'
-export const SEARCH_BLUR = 'search_blur'
-export const INIT_LIST = 'init_list'
+export const SEARCH_FOCUS = 'header/SEARCH_FOCUS'
+export const SEARCH_BLUR = 'header/SEARCH_BLUR'
+export const INIT_LIST = 'header/INIT_LIST'
