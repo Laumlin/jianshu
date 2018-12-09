@@ -2,7 +2,8 @@ import * as constains from './constants'
 import { fromJS } from 'immutable'
 
 const defaultState = fromJS({
-  focused: false
+  focused: false,
+  list: []
 })
 
 export default (state = defaultState, action) => {
@@ -13,6 +14,10 @@ export default (state = defaultState, action) => {
   }
   if (action.type === constains.SEARCH_BLUR) {
     return state.set('focused', false)
+  }
+  if (action.type === constains.INIT_LIST) {
+    console.log(action.data)
+    return state.set('list', action.data)// state中list为immutable对象，所以action.data也需要修改为immutable对象
   }
   return state
 }
