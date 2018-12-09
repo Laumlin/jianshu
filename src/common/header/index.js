@@ -25,9 +25,11 @@ class Header extends Component {
     const pageList = []
     if (newList.length) {
       for (let i = (page-1) * 10; i < page*10; i++) {
-        pageList.push(
-          <SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
-        )
+        if (newList[i]) {
+          pageList.push(
+            <SearchInfoItem key={newList[i]}>{newList[i]}</SearchInfoItem>
+          )
+        }
       }
     }
     if (focused || mouseIn) {
