@@ -3,6 +3,7 @@ import { fromJS } from 'immutable'
 
 const defaultState = fromJS({
   focused: false,
+  mouseIn: false,
   list: [],
   page: 1,
   totalPage: 1
@@ -11,6 +12,10 @@ const defaultState = fromJS({
 // 和设置的值，返回一个全新的对象，不是直接修改state
 export default (state = defaultState, action) => {
   switch (action.type) {
+    case constains.MOUSE_ENTER:
+      return state.set('mouseIn', true)
+    case constains.MOUSE_LEAVE:
+      return state.set('mouseIn', false)
     case constains.SEARCH_FOCUS:
       return state.set('focused', true)
     case constains.SEARCH_BLUR:

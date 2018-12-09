@@ -8,6 +8,14 @@ const initList = (data) => ({
   totalPage: Math.ceil(data.length / 10)
 })
 
+export const mouseEnter = () => ({
+  type: constanins.MOUSE_ENTER
+})
+
+export const mouseLeave = () => ({
+  type: constanins.MOUSE_LEAVE
+})
+
 export const searchFocus = () => ({
   type: constanins.SEARCH_FOCUS
 })
