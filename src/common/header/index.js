@@ -121,13 +121,13 @@ const mapDispatchToProps = (dispatch) => {
     },
 
     handleChangePage(page, totalPage, spinIcon) {
-      const originAngle = spinIcon.style.transform.replace(/[^0-9]/g, '')
+      let originAngle = spinIcon.style.transform.replace(/[^0-9]/g, '')
       if (originAngle) {
-        const angle = Number(originAngle)+360
-        spinIcon.style.transform = 'rotate('+ angle +'deg)'
+        originAngle = parseInt(originAngle, 10)
       } else {
-        spinIcon.style.transform = 'rotate(360deg)'
+        originAngle = 0
       }
+      spinIcon.style.transform = 'rotate('+ (originAngle+360) +'deg)'
 
       if (page < totalPage) {
         dispatch(actionCreators.changePage(page+1))
