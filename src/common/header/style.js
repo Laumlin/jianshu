@@ -127,6 +127,9 @@ export const SearchInfoSwitch = styled.span`
     transition: all .2s ease-in;
     transform-origin: center center;
   }
+  &:hover {
+    cursor: pointer;
+  }
 `
 export const SearchInfoList = styled.div `
   overflow: hidden;
