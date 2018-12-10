@@ -1,9 +1,17 @@
 import React, { Component } from 'react'
+import {
+  HomeWrapper,
+  HomeLeft,
+  HomeRight,
+} from './style'
 
 export default class Home extends Component {
   render() {
     return (
-      <div></div>
+      <HomeWrapper>
+        <HomeLeft>left</HomeLeft>
+        <HomeRight>right</HomeRight>
+      </HomeWrapper>
     )
   }
 }
