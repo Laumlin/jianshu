@@ -69,3 +69,74 @@ export const RecommendItem = styled.a.attrs({
   background: url(${(props) => props.imgUrl});
   background-size: contain;
 `
+export const AuthorWrapper = styled.div`
+  .more {
+    margin-top: 20px;
+    display: block;
+    padding: 10px 7px 10px 12px;
+    font-size: 13px;
+    text-align: center;
+    color: #787878;
+    background-color: #f7f7f7;
+    border: 1px solid #dcdcdc;
+    border-radius: 4px;
+    cursor: pointer;
+    .next {
+      font-size: 12px;
+    }
+  }
+`
+
+export const AuthorTilte = styled.div`
+  margin-top: 36px;
+  color: #969696;
+  font-size: 14px;
+  .left: {
+    float: left;
+  }
+  .right {
+    float: right;
+    .spin {
+      margin-right: 2px;
+      font-size: 13px;
+    }
+  }
+`
+export const Authors = styled.ul`
+`
+export const AuthorInfo = styled.li`
+  margin-top: 15px;
+  display: flex;
+  height: 48px;
+  .left {
+    .left-avtor {
+      margin-right: 10px;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+    }
+  }
+  .middle {
+    flex: 1;
+    .author-name {
+      display: block;
+      padding: 8px 0;
+      font-size: 14px;
+      color: #333;
+    }
+    .author-desc {
+      font-size: 12px;
+      color: #969696;
+    }
+  }
+  .right {
+    flex: 0 0 40px;
+    padding: 8px 0;
+    font-size: 13px;
+    color: #42c02e;
+    cursor: pointer;
+    .add {
+      font-size: 12px;
+    }
+  }
+`
