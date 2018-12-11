@@ -56,6 +56,21 @@ export const ListInfo = styled.div`
     margin: 0px 0px 8px;
   }
 `
+export const ListMeta = styled.div`
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #b4b4b4;
+  .iconfont {
+    font-size: 12px;
+  }
+  .author, .comments {
+    margin-right: 8px;
+    text-decoration: none;
+    color: #b4b4b4;
+  }
+`
+
 export const RecommendWrapper = styled.div`
   margin-top: 26px;
   width: 280px;
@@ -80,7 +95,7 @@ export const AuthorWrapper = styled.div`
     background-color: #f7f7f7;
     border: 1px solid #dcdcdc;
     border-radius: 4px;
-    cursor: pointer;
+    text-decoration: none;  
     .next {
       font-size: 12px;
     }
@@ -96,6 +111,7 @@ export const AuthorTilte = styled.div`
   }
   .right {
     float: right;
+    text-decoration: none;
     .spin {
       margin-right: 2px;
       font-size: 13px;
@@ -123,6 +139,7 @@ export const AuthorInfo = styled.li`
       padding: 8px 0;
       font-size: 14px;
       color: #333;
+      text-decoration: none;
     }
     .author-desc {
       font-size: 12px;
