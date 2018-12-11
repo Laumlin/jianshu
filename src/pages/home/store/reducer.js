@@ -54,6 +54,38 @@ const defaultState = fromJS({
       id: 4,
       imgUrl: "https://cdn2.jianshu.io/assets/web/banner-s-6-c4d6335bfd688f2ca1115b42b04c28a7.png"
     }
+  ],
+  authorList: [
+    {
+      id: 0,
+      imgUrl: "//upload.jianshu.io/users/upload_avatars/2558050/7761b285-2805-4534-9870-ba7dcc7538ec.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      name: "阿栈",
+      desc: "写了408.8k字 · 806喜欢"
+    },
+    {
+      id: 1,
+      imgUrl: "//upload.jianshu.io/users/upload_avatars/2631077/dc99c361412c?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      name: "木清琳",
+      desc: "写了215k字 · 2k喜欢"
+    },
+    {
+      id: 2,
+      imgUrl: "//upload.jianshu.io/users/upload_avatars/4802366/4f86b75d-b61b-4126-8be4-87a151c9cd28.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      name: "宇文歡",
+      desc: "写了274.8k字 · 1.4k喜欢"
+    },
+    {
+      id: 3,
+      imgUrl: "//upload.jianshu.io/users/upload_avatars/12665193/828a449f-efbb-4540-b0af-f6c314810515.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      name: "汪波_偶遇科学",
+      desc: "写了235.7k字 · 1.8k喜欢",
+    },
+    {
+      id: 4,
+      imgUrl: "//upload.jianshu.io/users/upload_avatars/5205317/1179d71b-e7c6-4023-89e8-bba25f88272b.jpg?imageMogr2/auto-orient/strip|imageView2/1/w/96/h/96/format/webp",
+      name: "遛遛心情的溜妈",
+      desc: "写了545k字 · 2.1k喜欢"
+    }
   ]
 })
 
