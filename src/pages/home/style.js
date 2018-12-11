@@ -20,7 +20,7 @@ export const HomeLeft = styled.div`
 `
 export const HomeRight = styled.div`
   float: right;
-  width: 240px;
+  width: 280px;
 `
 export const Carousel = styled.div`
   border-bottom: 1px solid rgb(240, 240, 240);
@@ -55,4 +55,17 @@ export const ListInfo = styled.div`
     color: rgb(153, 153, 153);
     margin: 0px 0px 8px;
   }
+`
+export const RecommendWrapper = styled.div`
+  margin-top: 26px;
+  width: 280px;
+`
+export const RecommendItem = styled.a.attrs({
+  href: '/'
+})`
+  display: block;
+  margin-bottom: 6px;
+  height: 50px;
+  background: url(${(props) => props.imgUrl});
+  background-size: contain;
 `
