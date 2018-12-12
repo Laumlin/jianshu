@@ -8,9 +8,10 @@ const homeInitData = (data) => ({
   recommendList: data.recommendList
 })
 
-const addArticleList = (data) => ({
+const addArticleList = (data, page) => ({
   type: contains.MORE_ARTICLE_LIST,
-  articleList: data.articleList
+  articleList: data.articleList,
+  page
 })
 
 export const getHomeInitData = () => {
@@ -26,12 +27,12 @@ export const getHomeInitData = () => {
   }
 }
 
-export const getMoreList = () => {
+export const getMoreList = (page) => {
   return (dispatch) => {
-    axios.get('/api/articleList.json')
+    axios.get('/api/articleList.json?page=' + page)
       .then(res => {
         const data = res.data
-        dispatch(addArticleList(data))
+        dispatch(addArticleList(data, page+1))
       })
       .catch(err => {
         console.log(err)

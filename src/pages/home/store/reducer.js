@@ -4,7 +4,8 @@ import * as contains from './contains'
 const defaultState = fromJS({
   articleList: [],
   authorList: [],
-  recommendList: []
+  recommendList: [],
+  page: 1
 })
 
 export default (state = defaultState, action) => {
@@ -16,7 +17,10 @@ export default (state = defaultState, action) => {
         'recommendList': fromJS(action.recommendList)
       })
     case contains.MORE_ARTICLE_LIST: 
-      return state.set('articleList', state.get('articleList').concat(fromJS(action.articleList)))
+      return state.merge({
+        'articleList': state.get('articleList').concat(fromJS(action.articleList)),
+        'page': action.page
+      })  
     default:
       return state
   }

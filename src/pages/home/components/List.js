@@ -5,7 +5,7 @@ import { ListItem, ListInfo, SplitLine, ListMeta, LoadMore } from '../style'
 
 class List extends Component {
   render() {
-    const { list, getMoreList } = this.props
+    const { list, getMoreList, page } = this.props
     return (
       <div>
         <SplitLine></SplitLine>
@@ -25,7 +25,7 @@ class List extends Component {
             </ListItem>
           )
         }
-        <LoadMore onClick={getMoreList}>阅读更多</LoadMore>
+        <LoadMore onClick={() => getMoreList(page)}>阅读更多</LoadMore>
       </div>
     )
   }
@@ -33,13 +33,14 @@ class List extends Component {
 
 const mapState = (state) => {
   return {
-    list: state.getIn(['home', 'articleList'])
+    list: state.getIn(['home', 'articleList']),
+    page: state.getIn(['home', 'page'])
   }
 }
 const mapDispatch = (dispatch) => {
   return {
-    getMoreList() {
-      dispatch(actionCreators.getMoreList())
+    getMoreList(page) {
+      dispatch(actionCreators.getMoreList(page))
     }
   }
 }
