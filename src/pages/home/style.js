@@ -168,5 +168,5 @@ export const LoadMore = styled.a`
   color: #fff;
   border-radius: 20px;
   background: #a5a5a5;
-  text-decoration: none;
+  cursor: pointer;
 `
