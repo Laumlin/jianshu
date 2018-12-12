@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { actionCreators } from './store'
 import List from './components/List'
 import Recommend from './components/Recommend'
 import Author from './components/Author'
@@ -10,7 +12,7 @@ import {
   Carousel,
 } from './style'
 
-export default class Home extends Component {
+class Home extends Component {
   render() {
     return (
       <HomeWrapper>
@@ -27,4 +29,17 @@ export default class Home extends Component {
       </HomeWrapper>
     )
   }
+
+  componentDidMount() {
+    this.props.getInitData()
+  }
 }
+
+const mapDispatch = (dispatch) => {
+  return {
+    getInitData() {
+      dispatch(actionCreators.getHomeInitData())
+    }
+  }
+}
+export default connect(null, mapDispatch)(Home)
