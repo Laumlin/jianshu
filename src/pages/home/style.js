@@ -157,3 +157,16 @@ export const AuthorInfo = styled.li`
     }
   }
 `
+
+export const LoadMore = styled.a`
+  display: block;
+  margin: 30px 0 60px 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  color: #fff;
+  border-radius: 20px;
+  background: #a5a5a5;
+  text-decoration: none;
+`

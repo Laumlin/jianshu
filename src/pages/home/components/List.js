@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { ListItem, ListInfo, SplitLine, ListMeta } from '../style'
+import { ListItem, ListInfo, SplitLine, ListMeta, LoadMore } from '../style'
 
 class List extends Component {
   render() {
@@ -24,6 +24,7 @@ class List extends Component {
             </ListItem>
           )
         }
+        <LoadMore href="/">阅读更多</LoadMore>
       </div>
     )
   }
