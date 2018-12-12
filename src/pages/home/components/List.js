@@ -10,8 +10,8 @@ class List extends Component {
       <div>
         <SplitLine></SplitLine>
         {
-          list.map((item) => 
-            <ListItem key={item.get('id')}>
+          list.map((item, index) => 
+            <ListItem key={index}>
               <img className="list-pic" src={item.get('imgUrl')} alt=""/>            
               <ListInfo>
                 <h3 className="title">{item.get('title')}</h3>
