@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { actionCreators } from './store'
 import List from './components/List'
@@ -12,7 +12,7 @@ import {
   Carousel,
 } from './style'
 
-class Home extends Component {
+class Home extends PureComponent {
   render() {
     return (
       <HomeWrapper>

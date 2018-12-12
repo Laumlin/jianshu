@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { BackToTop } from './style'
 import { actionCreators } from './store'
 
-class ToTop extends Component {
+class ToTop extends PureComponent {
   render() {
     const { scrollToTop, backToTop } = this.props
     return scrollToTop ? <BackToTop onClick={backToTop}><i className="iconfont to-top">&#xe634;</i></BackToTop> : null
