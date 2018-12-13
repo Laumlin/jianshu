@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { actionCreators } from '../store'
+import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { ListItem, ListInfo, SplitLine, ListMeta, LoadMore } from '../style'
 
@@ -14,7 +15,7 @@ class List extends Component {
             <ListItem key={index}>
               <img className="list-pic" src={item.get('imgUrl')} alt=""/>            
               <ListInfo>
-                <h3 className="title">{item.get('title')}</h3>
+                <Link className="title-wrapper" to="/detail"><h3 className="title">{item.get('title')}</h3></Link>
                 <p className="desc">{item.get('desc')}</p>
               </ListInfo>
               <ListMeta>

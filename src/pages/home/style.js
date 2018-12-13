@@ -42,6 +42,10 @@ export const ListItem = styled.div`
   }
 `
 export const ListInfo = styled.div`
+  .title-wrapper {
+    text-decoration: none;
+    color: #000;
+  }
   .title {
     display: inherit;
     font-size: 18px;
