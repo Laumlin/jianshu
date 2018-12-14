@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
 import { 
   AuthorWrapper,
@@ -7,7 +7,7 @@ import {
   AuthorInfo
 } from '../style'
 
-class Author extends Component {
+class Author extends PureComponent {
   getAuthorInfo() {
     const { list } = this.props
     return (
