@@ -11,8 +11,7 @@ class Detail extends PureComponent {
         <Header>
           <h1>{title}</h1>
         </Header>
-        <Content>
-          {content}
+        <Content dangerouslySetInnerHTML={{__html: content}}>
         </Content>
       </DetailWrapper>
     )
