@@ -18,7 +18,8 @@ class Detail extends PureComponent {
   }
   
   componentDidMount() {
-    this.props.getDetailData()
+    const id = this.props.match.params.id
+    this.props.getDetailData(id)
   }
 }
 
@@ -30,8 +31,8 @@ const mapState = (state) => {
 }
 const mapDispatch = (dispatch) => {
   return {
-    getDetailData() {
-      dispatch(actionCreators.getDetailData())
+    getDetailData(id) {
+      dispatch(actionCreators.getDetailData(id))
     }
   }
 }

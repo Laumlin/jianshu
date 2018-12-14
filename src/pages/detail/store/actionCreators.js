@@ -7,9 +7,9 @@ const initDetaiData = (data) => ({
   content: data.content
 })
 
-export const getDetailData = () => {
+export const getDetailData = (id) => {
   return (dispatch) => {
-    axios.get('/api/detail.json')
+    axios.get('/api/detail.json?id='+id)
       .then(res => {
         const data = res.data.data
         dispatch(initDetaiData(data))

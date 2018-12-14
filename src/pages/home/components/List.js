@@ -15,7 +15,7 @@ class List extends Component {
             <ListItem key={index}>
               <img className="list-pic" src={item.get('imgUrl')} alt=""/>            
               <ListInfo>
-                <Link className="title-wrapper" to="/detail"><h3 className="title">{item.get('title')}</h3></Link>
+                <Link className="title-wrapper" to={"/detail/"+item.get('id')}><h3 className="title">{item.get('title')}</h3></Link>
                 <p className="desc">{item.get('desc')}</p>
               </ListInfo>
               <ListMeta>
