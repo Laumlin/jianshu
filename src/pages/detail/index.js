@@ -1,23 +1,39 @@
 import React, { PureComponent } from 'react'
+import { connect } from 'react-redux'
+import { actionCreators } from './store'
 import { DetailWrapper, Header, Content } from './style'
 
-export default class Home extends PureComponent {
+class Detail extends PureComponent {
   render() {
+    const { title, content } = this.props
     return (
       <DetailWrapper>
         <Header>
-          <h1>为什么智商越高越不喜欢与人交往</h1>
+          <h1>{title}</h1>
         </Header>
         <Content>
-          <img className="pic" src="//upload-images.jianshu.io/upload_images/4417736-beffae580c604d10?imageMogr2/auto-orient/strip%7CimageView2/2/w/640/format/webp" alt="" />
-          <p>马云在一次演讲中说：“情商高的人容易成功，大家都喜欢他，他机会就多，而读书好的人又不太愿意跟人交朋友，所以智商高的人情商偏低。”
-             看看我们周围，大致是这样</p>
-          <p>为什么智商高的人，都不喜欢与人交往？1、频率不同的人，聊不到一起来电视剧《欢乐颂》里，有两个智商极高的人，一个是安迪，一个是曲筱绡。安迪，带着美国名校毕业和华尔街高管的光环，这智商就不用说了。曲筱绡智商也超高，别看她是个读国外野鸡大学的富二代，可老爸给她了个小公司，本来是让她玩玩，没想到她居然做得有声有色。在欢乐颂22楼的5位女孩中，曲筱绡和安迪关系最好。
-          。</p>
-          <p>有一次曲筱绡请安迪吃饭，两人边吃边聊，曲筱绡请教起公司的事务，安迪知无不言，言无不尽，让曲筱绡茅塞顿开，两人相谈甚欢。接着曲筱绡说起爸爸的名言：“常与同好争高下，不共傻瓜论短长”，引起安迪的强烈共鸣，安迪说，她最烦脑袋转不过弯的人。安迪的下属刘思明，就是个脑袋转不过弯的人。刘思明比较笨，写的报告常出错误，总惹安迪生气，甚至有时被安迪骂得狗血淋头，安迪特别不喜欢和他打交道。不在一个频道上的人，聊不到一起来。频率相同的人，即使翻山越岭，也终会相聚在一起；磁场不合的人，就算朝夕相处，也终归不是一路人。高智商的人，不是不喜欢和别人交往，而是不愿和不是一个频道的人交往。夏虫不可以语冰，井蛙不可以语海，鸡同鸭讲，鸡讲的累，鸭听的也累。聪明人喜欢和聪明人在一起，做棋逢对手的交流。与频率不同的人交流，与其无聊地应付，不如婉言拒绝。为交往而交往，浪费了时间和精力，聪明人也不会办这种傻事。人家不是无趣，只是懒得对你有趣。物以类聚，人以群分，不同频，无共振，多聊何益？频率不同的人，注定不会成朋友。
-          </p>
+          {content}
         </Content>
       </DetailWrapper>
     )
   }
+  
+  componentDidMount() {
+    this.props.getDetailData()
+  }
 }
+
+const mapState = (state) => {
+  return {
+    title: state.getIn(['detail', 'title']),
+    content: state.getIn(['detail', 'content'])
+  }
+}
+const mapDispatch = (dispatch) => {
+  return {
+    getDetailData() {
+      dispatch(actionCreators.getDetailData())
+    }
+  }
+}
+export default connect(mapState, mapDispatch)(Detail)
