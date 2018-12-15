@@ -37,12 +37,15 @@ export const LoginInput = styled.input`
   background-color: hsla(0,0%,71%,.1);
 `
 
-export const LoginButton = styled.button`
+export const LoginButton = styled.div`
   margin: 10px 0;
   width: 100%;
   height: 40px;
+  line-height: 40px;
   border: none;
   border-radius: 25px;
+  text-align: center;
   color: #fff;
   background-color: #3194d0;
+  cursor: pointer;
 `
