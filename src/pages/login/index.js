@@ -1,11 +1,13 @@
 import React, { PureComponent } from 'react'
 import { connect } from 'react-redux'
+import { Redirect } from 'react-router-dom'
 import { actionCreators } from './store'
 import { LoginWrapper, LoginBox, LoginInput, LoginButton } from './style'
 
 class Login extends PureComponent {
   render() {
     return (
+      this.props.loginStatus ? <Redirect to='/' /> :
       <LoginWrapper>
         <LoginBox>
           <div className="title-wrapper"><span className="title">登录</span></div>
@@ -20,7 +22,7 @@ class Login extends PureComponent {
 
 const mapState = (state) => {
   return {
-    
+    loginStatus: state.getIn(['login', 'login'])
   }
 }
 
