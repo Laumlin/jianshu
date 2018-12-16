@@ -12,6 +12,9 @@ export const login = (account, password) => {
         const data = res.data.loginStatus
         dispatch(toLogin(data))
       })
+      .catch(err => {
+        console.log(err)
+      })
   }
 }
 

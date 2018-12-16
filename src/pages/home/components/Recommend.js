@@ -20,4 +20,4 @@ const mapState = (state) => {
     list: state.getIn(['home', 'recommendList'])
   }
 }
-export default connect(mapState)(Recommend)
+export default connect(mapState, null)(Recommend)

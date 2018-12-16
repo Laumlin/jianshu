@@ -14,5 +14,8 @@ export const getDetailData = (id) => {
         const data = res.data.data
         dispatch(initDetaiData(data))
       })
+      .catch(err => {
+        console.log(err)
+      })
   }
 }

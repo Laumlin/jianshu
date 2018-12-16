@@ -49,4 +49,4 @@ const mapState = (state) => {
   }
 }
 
-export default connect(mapState)(Author)
+export default connect(mapState, null)(Author)
