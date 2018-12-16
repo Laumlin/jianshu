@@ -56,7 +56,7 @@ class Header extends PureComponent {
     }
   }
   render() {
-    const { focused, list, handleInputBlur, handleInputFocus } = this.props
+    const { login, focused, list, handleInputBlur, handleInputFocus } = this.props
     return (
       <HeaderWrapper>
         <Link to="/"><Logo></Logo></Link>
@@ -77,7 +77,7 @@ class Header extends PureComponent {
             <i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>&#xe60d;</i>
             {this.getListArea()}
           </SearchWrapper>
-          <NavItem className="right">登录</NavItem>
+          { login ? <Link to='/'><NavItem className="right">退出</NavItem></Link> : <Link to='/login'><NavItem className="right">登录</NavItem></Link>}
           <NavItem className="right">
             <i className="iconfont">&#xe636;</i>
           </NavItem>
@@ -101,6 +101,7 @@ const mapStateToProps = (state) => {
     page: state.getIn(['header', 'page']),
     mouseIn: state.getIn(['header', 'mouseIn']),
     totalPage: state.getIn(['header', 'totalPage']),
+    login: state.getIn(['login', 'login']),
   }
 }
 
