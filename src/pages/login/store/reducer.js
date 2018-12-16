@@ -9,6 +9,8 @@ export default (state = defaultState, action) => {
   switch(action.type) {
     case constants.LOGIN:
       return state.set('login', action.status)
+    case constants.LOGOUT:
+      return state.set('login', false)
     default:
       return state
   }

@@ -3,6 +3,7 @@ import { CSSTransition } from 'react-transition-group'
 import { Link } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { actionCreators } from './store/'
+import { actionCreators as loginActionCreators } from '../../pages/login/store'
 import { 
   HeaderWrapper,
   Logo,
@@ -56,7 +57,7 @@ class Header extends PureComponent {
     }
   }
   render() {
-    const { login, focused, list, handleInputBlur, handleInputFocus } = this.props
+    const { login, focused, list, handleInputBlur, handleInputFocus, logout } = this.props
     return (
       <HeaderWrapper>
         <Link to="/"><Logo></Logo></Link>
@@ -77,7 +78,7 @@ class Header extends PureComponent {
             <i className={focused ? 'focused iconfont zoom' : 'iconfont zoom'}>&#xe60d;</i>
             {this.getListArea()}
           </SearchWrapper>
-          { login ? <Link to='/'><NavItem className="right">退出</NavItem></Link> : <Link to='/login'><NavItem className="right">登录</NavItem></Link>}
+          { login ? <Link to='/'><NavItem className="right" onClick={logout}>退出</NavItem></Link> : <Link to='/login'><NavItem className="right">登录</NavItem></Link>}
           <NavItem className="right">
             <i className="iconfont">&#xe636;</i>
           </NavItem>
@@ -138,6 +139,10 @@ const mapDispatchToProps = (dispatch) => {
       } else {
         dispatch(actionCreators.changePage(1))
       }
+    },
+
+    logout() {
+      dispatch(loginActionCreators.logout())
     }
   }
 }
