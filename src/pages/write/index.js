@@ -5,9 +5,7 @@ import { Redirect } from 'react-router-dom'
 class Write extends PureComponent {
   render() {
     const { login } = this.props
-    return (
-      login ? <div>write页面</div> : <Redirect to='/login'/>
-    )
+    return login ? <div>文章页面</div> : <Redirect to={{pathname: '/login', state: {from: this.props.location}}}/>
   }
 }
 

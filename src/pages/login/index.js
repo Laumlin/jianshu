@@ -6,8 +6,9 @@ import { LoginWrapper, LoginBox, LoginInput, LoginButton } from './style'
 
 class Login extends PureComponent {
   render() {
+    let { from } = this.props.location.state || { from: {pathname: '/'}}
     return (
-      this.props.loginStatus ? <Redirect to='/' /> :
+      this.props.loginStatus ? <Redirect to={from} /> :
       <LoginWrapper>
         <LoginBox>
           <div className="title-wrapper"><span className="title">登录</span></div>
